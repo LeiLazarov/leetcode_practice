@@ -2,7 +2,7 @@
 # encoding: utf-8
 '''
 @author: Fizz Cao 
-@file: 2_add_two_numbers.py
+@file: 02_add_two_numbers.py
 @time: 2021/3/25 20:48
 '''
 
