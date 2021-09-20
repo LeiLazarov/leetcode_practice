@@ -1,24 +1,46 @@
 /**
  * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
  * }
  */
-/**
- * @param {TreeNode} root
- * @return {number[]}
- */
-var inorderTraversal = function(root) {
-    let ans = [];
-    inorder(ans, root);
-    return ans;
-};
+class Solution {
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<Integer> ();
+        inorder(ans, root);
+        return ans;
+    }
 
-var inorder = function(ans, root) {
-        if (!root) return;
+    public void inorder(List<Integer> ans, TreeNode root) {
+        if (root == null) return;
         inorder(ans, root.left);
-        ans.push(root.val);
+        ans.add(root.val);
         inorder(ans, root.right);
     }
+
+    public List<Integer> iteratingInorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<Integer> ();
+        Stack<TreeNode> stack = new Stack<TreeNode> ();
+
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            ans.add(root.val);
+            root = root.right;
+        }
+
+        return ans;
+    }
+}

@@ -21,4 +21,21 @@ var inorder = function(ans, root) {
         inorder(ans, root.left);
         ans.push(root.val);
         inorder(ans, root.right);
+};
+
+var iteratingInorderTraversal = function(root) {
+    let ans = [];
+    let stack = [];
+
+    while (root || stack.length) {
+        while(root) {
+            stack.push(root);
+            root = root.left;
+        }
+        root = stack.pop();
+        ans.push(root.val);
+        root = root.right;
     }
+
+    return ans;
+};
