@@ -3,6 +3,6 @@ My solutions as different categories for Leetcode questions. My leetcode profile
 
 Currently have:
 
-1 Top Interview Questions (18/136)
+1 Top Interview Questions (19/136)
 
 2 Linked List
