@@ -2,7 +2,6 @@
 # encoding: utf-8
 '''
 @author: Fizz Cao 
-@file: 242_valid_anagram.py
 @time: 6/08/2022 01:00 am
 '''
 
